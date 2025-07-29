@@ -1,0 +1,28 @@
+CREATE USER 'John_98'@'localhost' IDENTIFIED BY '1234';
+GRANT SELECT, CREATE, UPDATE ON *.* TO John_98'@'localhost';
+WITH
+MAX_CONNACTIONS_PER_HOUR 23
+MAX_UPDATES_PER_HOUR 5
+MAX_USER_CONNECTIONS 3;
+FLUSH PRIVILEGES;
+
+
+
+GRANT USAGE ON *.* TO 'John_98'@'localhost' WITH MAX_CONNECTIONS_PER_HOUR 98;
+
+---------------------------------------------------------------------------------
+
+SELECT USER();
+SELECT*FROM mysql.user;
+CREATE USER'user_name'@'localhost' IDENTIFIED BY'password1';
+GRANT ALL PRIVILEGES ON *.* TO user_name@localhost;
+FLUSH PRIVILEGES;
+GRANT ALL PRIVILEGES ON *.* TO 'user_name@'localhost';
+FLUSH PRIVILEGES;
+
+
+---------------------------------------------------------------
+CREATE USER'John_98'@'localhost' IDENTIFIED BY'password2';
+CREATE USER 'George_89'@'localhost' IDENTIFIED BY'password3';
+CREATE USER 'Mihalis_39'@'localhost' IDENTIFIED BY'password4';
+CREATE USER 'Nefeli_29'@'localhost' IDENTIFIED BY'password5';

@@ -1,0 +1,60 @@
+CREATE USER 'Dimitris_100'@'localhost' IDENTIFIED BY '1234';
+GRANT SELECT, CREATE, UPDATE ON *.* TO 'Dimitris_100'@'localhost'
+WITH
+MAX_CONNECTIONS_PER_HOUR 23
+MAX_UPDATES_PER_HOUR 5
+MAX_USERS_CONNECTIONS 3;
+FLUSH PRIVILEGES;
+CREATE USER 'Maria_100'@'localhost' IDENTIFIED BY '1234';
+GRANT SELECT, CREATE, UPDATE ON *.* TO 'Maria_100'@'localhost'
+WITH
+MAX_CONNECTIONS_PER_HOUR 8 
+MAX_UPDATES_PER_HOUR 3
+MAX_USERS_CONNECTIONS 1;
+CREATE USER 'Nikos_100'@'localhost' IDENTIFIED BY '1234';
+GRANT SELECT, CREATE, UPDATE ON *.* TO 'Nikos_100'@'localhost'
+WITH
+MAX_CONNECTIONS_PER_HOUR 13
+MAX_UPDATES_PER_HOUR 1
+MAX_USERS_CONNECTIONS 1;
+CREATE USER 'Aristea_100'@'localhost' IDENTIFIED BY '1234';
+GRANT SELECT, CREATE, UPDATE ON *.* TO 'Aristea_100'@'localhost'
+WITH
+MAX_CONNECTIONS_PER_HOUR 7
+MAX_UPDATES_PER_HOUR 4
+MAX_USERS_CONNECTIONS 9;
+FLUSH PRIVILEGES;
+CREATE USER 'Nikoleta_100'@'localhost' IDENTIFIED BY '1234';
+GRANT SELECT, CREATE, UPDATE ON *.* TO 'Nikoleta_100'@'localhost'
+WITH
+MAX_CONNECTIONS_PER_HOUR 23
+MAX_UPDATES_PER_HOUR 8
+MAX_USERS_CONNECTIONS 5;
+CREATE USER 'Alexis_100'@'localhost' IDENTIFIED BY '1234';
+GRANT SELECT, CREATE, UPDATE ON *.* TO 'Alexis_100'@'localhost'
+WITH
+MAX_CONNECTIONS_PER_HOUR 123
+MAX_UPDATES_PER_HOUR 15
+MAX_USERS_CONNECTIONS 13;
+FLUSH PRIVILEGES;
+
+use crypto;
+INSERT INTO customer(customer_id, first_name, password1) VALUES (NULL,AES_ENCRYPT('Maria','crypto_20'),AES_ENCRYPT('Papadopoulou','crypto_20'), SHA2('sdk_2539',224));
+INSERT INTO customer(customer_id, first_name, password1) VALUES (NULL,AES_ENCRYPT('Despoina','crypto_20'),AES_ENCRYPT('Papadopoulou','crypto_20'), SHA2('sdk_2539',224));
+INSERT INTO customer(customer_id, first_name, password1) VALUES (NULL,AES_ENCRYPT('Kostas','crypto_20'),AES_ENCRYPT('Georgiou','crypto_20'), SHA2('sdk_2539',224));
+INSERT INTO customer(customer_id, first_name, password1) VALUES (NULL,AES_ENCRYPT('Nikos','crypto_20'),AES_ENCRYPT('Damianos','crypto_20'), SHA2('sdk_2539',224));
+INSERT INTO customer(customer_id, first_name, password1) VALUES (NULL,AES_ENCRYPT('Panagiotis','crypto_20'),AES_ENCRYPT('Xalkias','crypto_20'), SHA2('sdk_2539',224));
+INSERT INTO customer(customer_id, first_name, password1) VALUES (NULL,AES_ENCRYPT('Michalis','crypto_20'),AES_ENCRYPT('atwork','crypto_20'), SHA2('sdk_2539',224));
+INSERT INTO customer(customer_id, first_name, password1) VALUES (NULL,AES_ENCRYPT('Evgenios','crypto_20'),AES_ENCRYPT('Katopodis','crypto_20'), SHA2('sdk_2539',224));
+INSERT INTO customer(customer_id, first_name, password1) VALUES (NULL,AES_ENCRYPT('Lambros','crypto_20'),AES_ENCRYPT('Konstas','crypto_20'), SHA2('sdk_2539',224));
+INSERT INTO customer(customer_id, first_name, password1) VALUES (NULL,AES_ENCRYPT('Aliki','crypto_20'),AES_ENCRYPT('Papagianni','crypto_20'), SHA2('sdk_2539',224));
+INSERT INTO customer(customer_id, first_name, password1) VALUES (NULL,AES_ENCRYPT('Maria','crypto_20'),AES_ENCRYPT('Floraki','crypto_20'), SHA2('sdk_2539',224));
+
+
+use crypto;
+SELECT cusotmer_id, CAST (AES_DECRYPT(first_name,
+'crypto_20') AS CHAR(50)) first_name_decrypt,
+CAST(AES_DECRYPT(last_name, 'crypto_20') AS CHAR(50)) last_name_decrypt,
+password1
+FROM customer;
+
