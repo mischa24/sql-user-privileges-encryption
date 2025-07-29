@@ -16,3 +16,7 @@ This project focuses on managing user accounts in MySQL, applying privilege rest
   - Encrypted `INSERT INTO` statements using `AES_ENCRYPT`
   - Hashed passwords with `SHA2()`
   - `SELECT` statements using `AES_DECRYPT`, aliases_
+
+## 📄 License
+
+This project is licensed under the terms of the [MIT License](LICENSE).
