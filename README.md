@@ -1,3 +1,9 @@
+![MIT License](https://img.shields.io/badge/license-MIT-green)
+![MySQL](https://img.shields.io/badge/Database-MySQL-blue)
+![SQL Security](https://img.shields.io/badge/Focus-User_Privileges_%26_Encryption-critical)
+![Access Control](https://img.shields.io/badge/User_Access-Control-orange)
+![Academic Simulation](https://img.shields.io/badge/Project-Academic_Simulation-lightgrey)
+
 # MySQL User Privileges & Data Encryption – SQL Security Simulation
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
